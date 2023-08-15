@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Product 1",
+    "price": 19.99,
+    "owner": "John Doe",
+    "description": "This is a sample product description.",
+    "categories": ["Electronics", "Gadgets"]
+  },
+  {
+    "id": "2",
+    "name": "Product 2",
+    "price": 29.99,
+    "owner": "Jane Smith",
+    "description": "Another sample product description.",
+    "categories": ["Clothing", "Accessories"]
+  },
+  {
+    "id": "3",
+    "name": "Product 3",
+    "price": 49.99,
+    "owner": "Michael Johnson",
+    "description": "A high-quality product for your needs.",
+    "categories": ["Home & Kitchen", "Appliances"]
+  },
+  {
+    "id": "4",
+    "name": "Product 4",
+    "price": 9.99,
+    "owner": "Emily Brown",
+    "description": "Affordable and reliable product.",
+    "categories": ["Beauty", "Skincare"]
+  },
+  {
+    "id": "5",
+    "name": "Product 5",
+    "price": 79.99,
+    "owner": "Robert Lee",
+    "description": "Designed for comfort and style.",
+    "categories": ["Furniture", "Living Room"]
+  },
+  {
+    "id": "6",
+    "name": "Product 6",
+    "price": 39.99,
+    "owner": "Maria Martinez",
+    "description": "The perfect accessory for any occasion.",
+    "categories": ["Fashion", "Jewelry"]
+  },
+  {
+    "id": "7",
+    "name": "Product 7",
+    "price": 14.95,
+    "owner": "William Taylor",
+    "description": "A must-have gadget for tech enthusiasts.",
+    "categories": ["Electronics", "Accessories"]
+  },
+  {
+    "id": "8",
+    "name": "Product 8",
+    "price": 59.99,
+    "owner": "Olivia Clark",
+    "description": "Experience the ultimate audio quality.",
+    "categories": ["Electronics", "Audio"]
+  },
+  {
+    "id": "9",
+    "name": "Product 9",
+    "price": 129.99,
+    "owner": "James Wilson",
+    "description": "Built to withstand the toughest challenges.",
+    "categories": ["Sports & Outdoors", "Equipment"]
+  },
+  {
+    "id": "10",
+    "name": "Product 10",
+    "price": 24.99,
+    "owner": "Sophia Garcia",
+    "description": "Add a touch of elegance to your space.",
+    "categories": ["Home & Kitchen", "Decor"]
+  }
+]
