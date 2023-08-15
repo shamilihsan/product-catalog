@@ -59,7 +59,7 @@ npm run dev
 
 - View a list of products with their details.
 - Add a product to favorites by clicking the heart icon.
-- Remove a product from favorites by clicking the X icon (available in the favorites view).
+- Remove a product from favorites by clicking the X icon (available in the favorites page).
 
 ## API Endpoints
 
