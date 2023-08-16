@@ -1,9 +1,10 @@
 "use client";
-
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,17 @@ const NavigationBar = () => {
   return (
     <NavContainer>
       <NavButton>
-        {/* <Icon src="/home-icon.svg" alt="Home" /> */}
-        <Link href={"/"}>Home</Link>
+        <Icon>
+          <FontAwesomeIcon icon={faHome} />
+        </Icon>
+        <NavLink href={"/"}>Home</NavLink>
       </NavButton>
 
       <NavButton>
-        {/* <Icon src="/favorites-icon.svg" alt="Favorites" /> */}
-        <Link href={"/favorites"}>Favorites</Link>
+        <Icon>
+          <FontAwesomeIcon icon={faHeart} />
+        </Icon>
+        <NavLink href={"/favorites"}>Favorites</NavLink>
       </NavButton>
     </NavContainer>
   );
@@ -53,6 +58,9 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
+  border-top: 2px solid #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     position: fixed;
@@ -60,7 +68,7 @@ const NavContainer = styled.nav`
     left: 0;
     right: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
   }
 `;
 
@@ -71,6 +79,11 @@ const NavButton = styled.div`
   flex-grow: 1;
   padding: 0.5rem 0;
   transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 5rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -79,12 +92,21 @@ const NavButton = styled.div`
   }
 
   &:hover {
-    background-color: #555;
+    background-color: #444;
   }
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
   width: 24px;
   height: 24px;
   margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 `;

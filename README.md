@@ -33,7 +33,7 @@ git  clone  https://github.com/shamilihsan/product-catalog.git
 
 ```bash
 
-cd nextjs-product-catalog
+cd product-catalog
 
 ```
 
@@ -75,3 +75,13 @@ npm run dev
 - `models/`: Contains functions that manage a list of favorite products using an in-memory approach.
 - `services/`: Provides endpoint definitions for the app to consume
 - `types/`: Contains TypeScript type definitions.
+
+## Improvements
+
+- Better error handling
+  - Send the correct status codes for both error and successful operations
+  - Display a message if the product is already added as favorite
+- UI
+  - Add a snackbar/toast instead of alert messages
+  - Configure styled-components to be rendered on the server side correctly in NextJS 13 (current implementation causes flickering and UI issues on initial load)
+  - Add a spinner to the loading indicator

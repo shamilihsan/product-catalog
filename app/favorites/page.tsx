@@ -7,24 +7,31 @@ import ProductGrid from "../components/ProductGrid";
 import { BASE_URL, removeFromFavoritesApi } from "../services/ApiService";
 import Product from "../types/product";
 
-function Favorites() {
+export default function Favorites() {
   const [favorites, setFavorites] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const response: AxiosResponse<Product[]> = await axios.get(
-      `${BASE_URL}/favorites`
-    );
-    setFavorites(response.data);
+    try {
+      setIsLoading(true);
+      const response: AxiosResponse<Product[]> = await axios.get(
+        `${BASE_URL}/favorites`
+      );
+      setFavorites(response.data);
+    } catch (error) {
+      console.error("Error fetching favorites:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   async function removeFromFavorites(product: Product) {
     try {
       await removeFromFavoritesApi(product);
-      alert(`Product ${product.name} was removed from favorites`);
       fetchData();
     } catch (error) {
       alert("Oops. Something went wrong");
@@ -33,7 +40,9 @@ function Favorites() {
 
   return (
     <MainContainer>
-      {favorites.length > 0 ? (
+      {isLoading ? (
+        <LoadingIndicator>Loading...</LoadingIndicator>
+      ) : favorites.length > 0 ? (
         <ProductGrid
           products={favorites}
           isFavorite
@@ -46,8 +55,6 @@ function Favorites() {
   );
 }
 
-export default Favorites;
-
 const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -58,6 +65,13 @@ const MainContainer = styled.main`
 `;
 
 const NoFavoritesMessage = styled.p`
+  font-size: 1.5rem;
+  color: #6b7280;
+  text-align: center;
+  margin: 3rem auto;
+`;
+
+const LoadingIndicator = styled.div`
   font-size: 1.5rem;
   color: #6b7280;
   text-align: center;

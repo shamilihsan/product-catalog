@@ -38,3 +38,5 @@ export async function DELETE(request: Request) {
     return NextResponse.json({ error: "Server error" });
   }
 }
+
+// TODO - Send the correct status codes (201, 500 etc.)
